@@ -6,8 +6,10 @@ nav.navbar.navbar-default(ng-controller="NavCtrl")
         span.icon-bar
         span.icon-bar
         span.icon-bar
-      a.navbar-brand(href="#"): i.fa.fa-diamond &nbsp; CM Blog
+      a.navbar-brand(ui-sref='home'): i.fa.fa-diamond &nbsp; C.M.
     #navbar.collapse.navbar-collapse
       ul.nav.navbar-nav.navbar-right
         li: a(ui-sref='contact'): i.fa.fa-paper-plane &nbsp; Contact Me
-        li: button.btn.btn-success.btn-xs.navbar-text(ui-sref='login') Blogger Login
+        li: a(ui-sref='home'): i.fa.fa-home &nbsp; Home
+        li(ng-show='activeUser'): a(ui-sref='post'): i.fa.fa-bolt &nbsp; New Post
+        li: a(ui-sref='login'): i.fa.fa-dashboard &nbsp; Admin Login

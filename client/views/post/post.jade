@@ -1,0 +1,14 @@
+.row
+  .col-xs-10.col-xs-offset-1
+    h2.text-center New Post
+    form
+      .form-group
+        label(for="post-title") Post Title
+        input#post-title.form-control(type='text', autofocus=true ng-model='post.title')
+.row
+  .col-xs-10.col-xs-offset-1
+    .form-group
+      label(for="post-body") Post Body
+      textarea(rows="30")#post-body.form-control.input-lg(type='text' ng-model='post.body')
+    .form-group
+      button.btn.btn-success(ng-click='addPost(post)') Add Post

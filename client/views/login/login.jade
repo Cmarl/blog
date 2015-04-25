@@ -3,9 +3,9 @@
     form
       .form-group
         label(for='email') Email
-        input#email.form-control(type='email', name='email', autofocus=true, ng-model='user.email')
+        input#email.form-control(type='email', name='email', autofocus=true, ng-model='admin.email')
       .form-group
         label(for='password') Password
-        input#password.form-control(type='password', name='password', ng-model='user.password')
+        input#password.form-control(type='password', name='password', ng-model='admin.password')
       .form-group
-        button.btn.btn-default(type='submit', ng-click='submit(user)') Submit
+        button.btn.btn-default(type='submit', ng-click='submit(admin)') Authenticate

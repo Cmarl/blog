@@ -1,4 +1,4 @@
-'user strict';
+'use strict';
 
-angular.module('checklist')
+angular.module('blogger')
 .controller('');
