@@ -1,0 +1,13 @@
+av.navbar.navbar-default(ng-controller="NavCtrl")
+  .containter-fluid
+    .navbar-header
+      button.button.navbar-toggle.collapsed(data-toggle="collapse" data-target="navbar")
+        span.sr-only Toggle Navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand(href="#"): i.fa.fa-diamond &nbsp; Blogger
+    #navbar.collapse.navbar-collapse
+      ul.nav.navbar-nav.navbar-right
+        li: a(ui-sref='contact'): i.fa.fa-paper-plane &nbsp; Contact
+        
