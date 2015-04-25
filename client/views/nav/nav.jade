@@ -1,4 +1,4 @@
-av.navbar.navbar-default(ng-controller="NavCtrl")
+nav.navbar.navbar-default(ng-controller="NavCtrl")
   .containter-fluid
     .navbar-header
       button.button.navbar-toggle.collapsed(data-toggle="collapse" data-target="navbar")
@@ -6,8 +6,8 @@ av.navbar.navbar-default(ng-controller="NavCtrl")
         span.icon-bar
         span.icon-bar
         span.icon-bar
-      a.navbar-brand(href="#"): i.fa.fa-diamond &nbsp; Blogger
+      a.navbar-brand(href="#"): i.fa.fa-diamond &nbsp; CM Blog
     #navbar.collapse.navbar-collapse
       ul.nav.navbar-nav.navbar-right
-        li: a(ui-sref='contact'): i.fa.fa-paper-plane &nbsp; Contact
-        
+        li: a(ui-sref='contact'): i.fa.fa-paper-plane &nbsp; Contact Me
+        li: button.btn.btn-success.btn-xs.navbar-text(ui-sref='login') Blogger Login
