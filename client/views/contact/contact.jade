@@ -1,7 +1,16 @@
 .container
   .row
-    .col-xs-6
+    .col-xs-8
       h1 Contact Me
       h2: a(href="http://clydemarl.me") Personal Website
-      h3  Email me at: marl.clyde@gmail.com
-      h3: a(href="https://www.linkedin.com/profile/preview?locale=en_US&trk=prof-0-sb-preview-primary-button") LinkedIn
+      h2: a(href="https://www.linkedin.com/profile/preview?locale=en_US&trk=prof-0-sb-preview-primary-button") LinkedIn
+      
+      h2 Send me a message
+      a#foxyform_embed_link_661404(href='http://www.foxyform.com/')
+        script(type='text/javascript').
+          (function(d, t){
+          var g = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+          g.src = "http://www.foxyform.com/js.php?id=661404&sec_hash=f30a631a0d1&width=350px";
+          s.parentNode.insertBefore(g, s);
+          }(document, "script"));

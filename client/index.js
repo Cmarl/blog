@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('blogger', ['firebase','ui.router'])
+angular.module('blogger', ['firebase','ui.router','ngAnimate'])
 .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
   $urlRouterProvider.otherwise('/');
   $stateProvider

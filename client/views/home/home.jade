@@ -1,4 +1,28 @@
-.container
+script.
+  window.fbAsyncInit = function() {
+  FB.init({
+  appId      : '397995683739168',
+  xfbml      : true,
+  version    : 'v2.3'
+  });
+  };
+  (function(d, s, id){
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+.container-fluid
+  .row
+    .col-xs-12
+      .fb-like#social(data-share="true" data-width="150" data-show-faces="true")
+  .row
+    .col-xs-12
+      a.twitter-follow-button(href='https://twitter.com/ClydeMarl', data-show-count='false', data-size='large') Follow @ClydeMarl
+      script.
+        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs')
+.container-fluid
   .row
     .col-xs-4
       h1 Posts
@@ -10,9 +34,9 @@
         th Posted On
     tbody
       tr(ng-repeat='post in afPosts')
-        td: h2.post.title {{post.title}}
+        td: h3.post.title {{post.title}}
         td
-          button.btn.btn-sm.btn-info(ng-click='showBody = !showBody') Read
+          button.btn.btn-lg.btn-info(ng-click='showBody = !showBody') Read
           button.btn.btn-sm.btn-danger(ng-click='deletePost(post)' ng-show='activeUser') Delete
-          h3.postbody.post(ng-show='showBody') {{post.body}}
-        td: h2 {{post.createdAt | date: 'MM-dd-yyyy'}}
+          h4(ng-show='showBody') {{post.body}}
+        td: h3 {{post.createdAt | date: 'MM-dd-yyyy'}}

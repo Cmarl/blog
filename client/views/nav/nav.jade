@@ -1,21 +1,16 @@
 nav.navbar.navbar-default(ng-controller="NavCtrl")
   .containter-fluid
     .navbar-header
-      button.button.navbar-toggle.collapsed(data-toggle="collapse" data-target="navbar")
+      button.button.navbar-toggle.collapsed(data-toggle="collapse" data-target=".navbar-collapse")
         span.sr-only Toggle Navigation
         span.icon-bar
         span.icon-bar
         span.icon-bar
       a.navbar-brand(ui-sref='home')&nbsp; C.M.
-    #navbar.collapse.navbar-collapse
-      ul.nav.navbar-nav.navbar-left
-        li: a.twitter-follow-button.navbar-text(href='https://twitter.com/ClydeMarl', data-show-count='false', data-size='large') Follow @ClydeMarl
-        script.
-          !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs')
+    #navbar-collapse.collapse.navbar-collapse
       ul.nav.navbar-nav.navbar-right
         li: a(ui-sref='contact'): i.fa.fa-paper-plane &nbsp; Contact Me
         li: a(ui-sref='home'): i.fa.fa-home &nbsp; Home
         li(ng-show='activeUser'): a(ui-sref='post'): i.fa.fa-bolt &nbsp; New Post
         li(ng-hide='activeUser'): a(ui-sref='login'): i.fa.fa-dashboard &nbsp; Admin Login
         li(ng-show='activeUser' ng-click='logout()'): a(ui-sref='home'): i.fa.fa-road &nbsp; Logout
-        
