@@ -4,6 +4,11 @@ angular.module('blogger')
 .controller('PostCtrl',['$scope','$state', 'Post', '$window', function($scope,$state,Post,$window){
   $scope.afPosts = Post.init();
 
+  $scope.deletePost =function(post){
+    console.log('destruction');
+    Post.destroy(post);
+  };
+
   $scope.addPost = function(post){
 
     console.log('click click bitch');

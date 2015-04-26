@@ -10,9 +10,9 @@
         th Posted On
     tbody
       tr(ng-repeat='post in afPosts')
-        td: h2 {{post.title}}
+        td: h2.post.title {{post.title}}
         td
-          button.btn.btn-xs.btn-info(ng-click='showBody = !showBody') Read
-          button.btn.btn-xs.btn-danger(ng-click='deletePost' ng-show='activeUser') Delete
-          h3.postbody(ng-show='showBody') {{post.body}}
-        td: h2 {{post.createdAt | date: 'MM dd yyyy'}}
+          button.btn.btn-sm.btn-info(ng-click='showBody = !showBody') Read
+          button.btn.btn-sm.btn-danger(ng-click='deletePost(post)' ng-show='activeUser') Delete
+          h3.postbody.post(ng-show='showBody') {{post.body}}
+        td: h2 {{post.createdAt | date: 'MM-dd-yyyy'}}
