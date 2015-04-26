@@ -5,10 +5,9 @@
       .form-group
         label(for="post-title") Post Title
         input#post-title.form-control(type='text', autofocus=true ng-model='post.title')
+        button.btn.btn-success(ng-click='addPost(post)') Add Post
 .row
   .col-xs-10.col-xs-offset-1
     .form-group
       label(for="post-body") Post Body
-      textarea(rows="30")#post-body.form-control.input-lg(type='text' ng-model='post.body')
-    .form-group
-      button.btn.btn-success(ng-click='addPost(post)') Add Post
+      textarea(rows="20")#post-body.form-control.input-lg(type='text' ng-model='post.body')

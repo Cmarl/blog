@@ -4,7 +4,7 @@ angular.module('blogger', ['firebase','ui.router'])
 .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
   $urlRouterProvider.otherwise('/');
   $stateProvider
-  .state('home', {url: '/', templateUrl: '/views/home/home.html'})
+  .state('home', {url: '/', templateUrl: '/views/home/home.html',controller: 'PostCtrl'})
   .state('contact', {url: '/contact', templateUrl: '/views/contact/contact.html'})
   .state('login', {url: '/login', templateUrl: '/views/login/login.html',controller: 'LoginCtrl'})
   .state('post', {url: '/post', templateUrl: '/views/post/post.html',controller: 'PostCtrl'});

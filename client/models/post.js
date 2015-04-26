@@ -1,16 +1,20 @@
 'use strict';
 
 angular.module('blogger')
-.factory('Post', ['$rootScope','$scope', '$firebaseArray', function($rootScope,$scope, $firebaseArray){
+.factory('Post', ['$rootScope', '$firebaseArray', function($rootScope, $firebaseArray){
 
   var fbPosts;
   var afPosts;
 
   function init(){
-    fbPosts = $rootScope.fbRoot.child('posts');
+    fbPosts = $rootScope.fbRoot.child('/posts');
     afPosts = $firebaseArray(fbPosts);
     return afPosts;
   }
 
-  return {init: init};
+  function addPost(post){
+    return afPosts.$add(post);
+  }
+
+  return {init: init, addPost: addPost};
 }]);

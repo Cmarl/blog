@@ -1,12 +1,18 @@
-.row
-  .col-xs-12
-    h3 Blog Posts
-table.table
-  thead
-    tr
-      th Post Title
-      th Post Date
-  tbody
-    tr
-      td Post Title
-      td Post Date
+.container
+  .row
+    .col-xs-4
+      h1 Posts
+  table.table
+    thead
+      tr
+        th Post
+        th
+        th Posted On
+    tbody
+      tr(ng-repeat='post in afPosts')
+        td: h2 {{post.title}}
+        td
+          button.btn.btn-xs.btn-info(ng-click='showBody = !showBody') Read
+          button.btn.btn-xs.btn-danger(ng-click='deletePost' ng-show='activeUser') Delete
+          h3.postbody(ng-show='showBody') {{post.body}}
+        td: h2 {{post.createdAt | date: 'MM dd yyyy'}}

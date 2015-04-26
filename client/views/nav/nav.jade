@@ -12,4 +12,5 @@ nav.navbar.navbar-default(ng-controller="NavCtrl")
         li: a(ui-sref='contact'): i.fa.fa-paper-plane &nbsp; Contact Me
         li: a(ui-sref='home'): i.fa.fa-home &nbsp; Home
         li(ng-show='activeUser'): a(ui-sref='post'): i.fa.fa-bolt &nbsp; New Post
-        li: a(ui-sref='login'): i.fa.fa-dashboard &nbsp; Admin Login
+        li(ng-hide='activeUser'): a(ui-sref='login'): i.fa.fa-dashboard &nbsp; Admin Login
+        li(ng-show='activeUser' ng-click='logout()'): a(ui-sref='home'): i.fa.fa-road &nbsp; Logout
