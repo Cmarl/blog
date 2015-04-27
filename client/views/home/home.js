@@ -1,6 +1,8 @@
 'use strict';
 
 angular.module('blogger')
-.controller('HomeCtrl',['$scope','Post',function($scope,Post){
-  
+.controller('HomeCtrl',['$scope','$state','Post',function($scope,$state,Post){
+
+
+
 }]);

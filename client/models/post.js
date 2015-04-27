@@ -20,5 +20,9 @@ angular.module('blogger')
     return afPosts.$remove(post);
   }
 
-  return {init: init, addPost: addPost, destroy: destroy};
+  function getPost(){
+    return afPosts;
+  }
+
+  return {init: init, addPost: addPost, destroy: destroy, getPost: getPost};
 }]);

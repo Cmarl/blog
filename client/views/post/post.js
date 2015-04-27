@@ -1,8 +1,12 @@
 'use strict';
 
 angular.module('blogger')
-.controller('PostCtrl',['$scope','$state', 'Post', '$window', function($scope,$state,Post,$window){
+.controller('PostCtrl',['$scope','$rootScope','$state', 'Post', '$window', function($scope,$rootScope,$state,Post,$window){
   $scope.afPosts = Post.init();
+
+  $scope.shortenText = function(){
+    console.log($scope.post.body.slice(0,200) + '...');
+  };
 
   $scope.deletePost =function(post){
     console.log('destruction');
@@ -24,4 +28,10 @@ angular.module('blogger')
       $state.go('home');
     });
   };
+
+  $scope.openPost = function(index){
+    $rootScope.postInfo = index;
+    $state.go('onepost', $rootScope.postInfo);
+  };
+
 }]);

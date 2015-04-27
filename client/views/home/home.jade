@@ -1,27 +1,8 @@
-script.
-  window.fbAsyncInit = function() {
-  FB.init({
-  appId      : '397995683739168',
-  xfbml      : true,
-  version    : 'v2.3'
-  });
-  };
-  (function(d, s, id){
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) {return;}
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/sdk.js";
-    fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-.container-fluid
-  .row
-    .col-xs-12
-      .fb-like#social(data-share="true" data-width="150" data-show-faces="true")
-  .row
-    .col-xs-12
-      a.twitter-follow-button(href='https://twitter.com/ClydeMarl', data-show-count='false', data-size='large') Follow @ClydeMarl
-      script.
-        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs')
+.row
+  .col-xs-12
+    a.twitter-follow-button(href='https://twitter.com/ClydeMarl', data-show-count='false', data-size='large') Follow @ClydeMarl
+    script.
+      !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs')
 .container-fluid
   .row
     .col-xs-4
@@ -29,14 +10,17 @@ script.
   table.table
     thead
       tr
-        th Post
+        th Title
         th
-        th Posted On
+        th Date
     tbody
-      tr(ng-repeat='post in afPosts')
-        td: h3.post.title {{post.title}}
+      tr(ng-repeat='post in afPosts track by $index | orderBy:"$scope.post.createdAt"')
+        td(ng-hide='showBody'): h3.post.title {{post.title}}
         td
-          button.btn.btn-lg.btn-info(ng-click='showBody = !showBody') Read
+          button.btn.btn-sm.btn-info(ng-click='showBody = !showBody') More
           button.btn.btn-sm.btn-danger(ng-click='deletePost(post)' ng-show='activeUser') Delete
-          h4(ng-show='showBody') {{post.body}}
-        td: h3 {{post.createdAt | date: 'MM-dd-yyyy'}}
+          h4(ng-show='showBody') {{post.title}}
+          h4(ng-show='showBody') {{post.createdAt | date: 'MM-dd-yyyy'}}
+          h5(ng-show='showBody') {{post.body.slice(0,400) + '...'}}
+          button.btn.btn-xs.btn-success(ng-show='showBody' ng-click='openPost($index)') Read Full
+        td(ng-hide='showBody'): h3 {{post.createdAt | date: 'MM-dd-yyyy'}}
