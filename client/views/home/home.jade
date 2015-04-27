@@ -6,7 +6,7 @@
 .container-fluid
   .row
     .col-xs-4
-      h1 Posts
+      h2 Latest
   table.table
     thead
       tr
@@ -14,13 +14,13 @@
         th
         th Date
     tbody
-      tr(ng-repeat='post in afPosts track by $index | orderBy:"$scope.post.createdAt"')
+      tr(ng-repeat='post in afPosts track by $index')
         td(ng-hide='showBody'): h3.post.title {{post.title}}
         td
-          button.btn.btn-sm.btn-info(ng-click='showBody = !showBody') More
+          button.btn.btn-sm.btn-warning(ng-click='showBody = !showBody') More
           button.btn.btn-sm.btn-danger(ng-click='deletePost(post)' ng-show='activeUser') Delete
           h4(ng-show='showBody') {{post.title}}
-          h4(ng-show='showBody') {{post.createdAt | date: 'MM-dd-yyyy'}}
+          h6(ng-show='showBody') {{post.createdAt | date: 'MM-dd-yyyy'}}
           h5(ng-show='showBody') {{post.body.slice(0,400) + '...'}}
           button.btn.btn-xs.btn-success(ng-show='showBody' ng-click='openPost($index)') Read Full
         td(ng-hide='showBody'): h3 {{post.createdAt | date: 'MM-dd-yyyy'}}
